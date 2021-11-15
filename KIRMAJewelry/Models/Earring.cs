@@ -7,5 +7,6 @@ namespace KIRMAJewelry.Models
 {
     public class Earring
     {
+        public string Type { get; set; }
     }
 }
