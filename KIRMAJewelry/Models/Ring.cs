@@ -7,5 +7,8 @@ namespace KIRMAJewelry.Models
 {
     public class Ring
     {
+        public double Size { get; set; }
+
+        public double Karat { get; set; }
     }
 }

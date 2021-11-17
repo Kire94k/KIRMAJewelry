@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace KIRMAJewelry.Models
+namespace KIRMAJewelry.Services
 {
-    public class Earring : Product
+    interface EarringService
     {
-        public string Type { get; set; }
     }
 }
