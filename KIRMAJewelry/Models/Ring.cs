@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace KIRMAJewelry.Models
 {
-    public class Ring
+    public class Ring : Product
     {
         public double Size { get; set; }
 
