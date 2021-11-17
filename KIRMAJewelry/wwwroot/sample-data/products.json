@@ -1,3 +1,128 @@
-{
+[
+  {
+    // Bracelet
+    "Id": 1,
+    "Name": "RECONNECT armring sølvbelagt",
+    "Price": 1000,
+    "Description": "sodj",
+    "Material": "Sølvbelagt",
+    "Designer": "Reconnect",
+    "Length": 100,
+    "Pendant": "False"
 
-}
+  },
+
+  {
+    "Id": 1,
+    "Name": "PARAMUT armring guldbelagt",
+    "Price": 500,
+    "Description": "sodj",
+    "Material": "Guldbelagt",
+    "Designer": "Paramut",
+    "Length": 74,
+    "Pendant": "True"
+  },
+
+  {
+    "Id": 1,
+    "Name": "VERA guldbelagt",
+    "Price": 350,
+    "Description": "sodj",
+    "Material": "Guldbelagt",
+    "Designer": "Vera",
+    "Length": 185,
+    "Pendant": "False"
+  },
+
+  // Earring
+  {
+    "Id": 1,
+    "Name": "ZION organiske hoops guldbelagt",
+    "Price": 1000,
+    "Description": "sodj",
+    "Material": "Sølvbelagt",
+    "Designer": "Reconnect",
+    "Type": "ørestik"
+  },
+  {
+    "Id": 1,
+    "Name": "RECONNECT armring sølvbelagt",
+    "Price": 1000,
+    "Description": "sodj",
+    "Material": "Sølvbelagt",
+    "Designer": "Reconnect",
+    "Type": "Hoops"
+    },
+  {
+    "Id": 1,
+    "Name": "RECONNECT armring sølvbelagt",
+    "Price": 1000,
+    "Description": "sodj",
+    "Material": "Sølvbelagt",
+    "Designer": "Reconnect",
+    "Length": 100,
+    "Type": "Ørehænger" 
+  },
+  // Necklace
+  {
+    "Id": 1,
+    "Name": "RECONNECT armring sølvbelagt",
+    "Price": 1000,
+    "Description": "sodj",
+    "Material": "Sølvbelagt",
+    "Designer": "Reconnect",
+    "Length": 100,
+    "Pendant": "False"
+  },
+  {
+    "Id": 1,
+    "Name": "RECONNECT armring sølvbelagt",
+    "Price": 1000,
+    "Description": "sodj",
+    "Material": "Sølvbelagt",
+    "Designer": "Reconnect",
+    "Length": 100,
+    "Pendant": "False"
+  },
+  {
+    "Id": 1,
+    "Name": "RECONNECT armring sølvbelagt",
+    "Price": 1000,
+    "Description": "sodj",
+    "Material": "Sølvbelagt",
+    "Designer": "Reconnect",
+    "Length": 100,
+    "Pendant": "False"
+  },
+  // Ring
+  {
+    "Id": 1,
+    "Name": "RECONNECT armring sølvbelagt",
+    "Price": 1000,
+    "Description": "sodj",
+    "Material": "Sølvbelagt",
+    "Designer": "Reconnect",
+    "Length": 100,
+    "Pendant": "False"
+  },
+  {
+    "Id": 1,
+    "Name": "RECONNECT armring sølvbelagt",
+    "Price": 1000,
+    "Description": "sodj",
+    "Material": "Sølvbelagt",
+    "Designer": "Reconnect",
+    "Length": 100,
+    "Pendant": "False"
+  },
+  {
+    "Id": 1,
+    "Name": "RECONNECT armring sølvbelagt",
+    "Price": 1000,
+    "Description": "sodj",
+    "Material": "Sølvbelagt",
+    "Designer": "Reconnect",
+    "Length": 100,
+    "Pendant": "False"
+  }
+]
