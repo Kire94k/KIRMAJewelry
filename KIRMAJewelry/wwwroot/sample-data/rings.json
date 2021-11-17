@@ -1,3 +1,32 @@
-{
-
-}
+[
+  {
+    "Id": 10,
+    "Name": "LULU stack ring guldbelagt",
+    "Price": 1450,
+    "Description": "Smuk ring i stilrent design og det elegante touch i rækken af Pilgrim stackable rings",
+    "Material": "Guldbelagt",
+    "Designer": "Lulu",
+    "size": 48,
+    "Karat": 9
+  },
+  {
+    "Id": 11,
+    "Name": "COMPASS organisk ring Guldbelagt",
+    "Price": 1700,
+    "Description": "Mød verden med et spændende og cool look, der skaber et nyt og magisk touch til alle dine outfits",
+    "Material": "Sølvbelagt",
+    "Designer": "Compass",
+    "size": 50,
+    "Karat": 14
+  },
+  {
+    "Id": 12,
+    "Name": "AUTHENTICITY ring guldbelagt",
+    "Price": 1100,
+    "Description": "Naturlige shapes er definitionen på simple beauty",
+    "Material": "Sølvbelagt",
+    "Designer": "Reconnect",
+    "size": 58,
+    "Karat": 8
+  }
+]

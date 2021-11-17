@@ -1,3 +1,30 @@
-{
-
-}
+[
+  // Earring
+  {
+    "Id": 4,
+    "Name": "ZION organiske hoops guldbelagt",
+    "Price": 199,
+    "Description": "Be playful, og lad dig inspirere af Pilgrims nye twist på de klassiske hoops",
+    "Material": "Guldbelagt",
+    "Designer": "Zion",
+    "Type": "Hoops"
+  },
+  {
+    "Id": 5,
+    "Name": "PRECIOUS ferskvandsperle øreringe guldbelagt",
+    "Price": 299,
+    "Description": "Følg dit hjerte og dyrk den romantiske vibe med de guldbelagte øreringe med ægte ferskvandsperler",
+    "Material": "Guldbelagt",
+    "Designer": "Precious",
+    "Type": "Ørehænger"
+  },
+  {
+    "Id": 6,
+    "Name": "BELIEF krystal og ferskvandsperle øreringe guldbelagt",
+    "Price": 199,
+    "Description": "Med dette sæt får du hele 4 feminine studs i 1 sæt med et mix af flotte ferskvandsperler og shiny Preciosa-krystaller",
+    "Material": "Guldbelagt",
+    "Designer": "Belief",
+    "Type": "Ørestikker"
+  }
+]

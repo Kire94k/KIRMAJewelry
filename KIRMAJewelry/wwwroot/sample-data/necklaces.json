@@ -1,3 +1,32 @@
-{
-
-}
+[
+  {
+    "Id": 7,
+    "Name": "DAGMAR halskæde guldbelagt",
+    "Price": 199,
+    "Description": "Dagmarkorset regnes for at være et af Danmarks største nationalklenodier, og er det tætteste man kommer på et nationalsmykke.",
+    "Material": "Guldbelagt",
+    "Designer": "Dagmar",
+    "Length": 40,
+    "Pendant": "True"
+  },
+  {
+    "Id": 8,
+    "Name": "NOREEN flat snakechain halskæde sølvbelagt",
+    "Price": 199,
+    "Description": "Sølvbelagt, blank slangehalskæde, der fremstår som et bredt bånd med smuk struktur",
+    "Material": "Sølvbelagt",
+    "Designer": "Reconnect",
+    "Length": 49,
+    "Pendant": "False"
+  },
+  {
+    "Id": 9,
+    "Name": "CHAKRA karneol halskæde guldbelagt",
+    "Price": 399,
+    "Description": "Chakra: Sacral. Et stykke orange karneol i en skøn form er vedhæng i denne guldbelagte halskæde",
+    "Material": "Guldbelagt",
+    "Designer": "Chakra",
+    "Length": 49,
+    "Pendant": "True"
+  }
+]
