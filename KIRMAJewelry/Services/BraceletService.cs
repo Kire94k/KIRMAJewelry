@@ -35,6 +35,13 @@ namespace KIRMAJewelry.Services
             bracelets = await Task.Factory.StartNew(()=> braceletList.ToArray());
             return bracelets;
         }
+        public async Task<Bracelet[]> Delete(Bracelet bracelet)
+        {
+            bracelets = await Task.Factory.StartNew(() =>
+            bracelets.Where(x => x != bracelet).ToArray()
+            );
+            return bracelets;
+        }
 
     }  
 }

@@ -1,4 +1,6 @@
 ﻿@inject IBraceletService client
+@inject IMessagingService _MessagingService
+@page "/braceletdetail"
 @if (SelectedBracelet != null)
 {
     <h2>@SelectedBracelet.Name.ToUpper() Details</h2>

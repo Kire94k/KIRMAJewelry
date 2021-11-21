@@ -19,7 +19,8 @@ namespace KIRMAJewelry
             builder.RootComponents.Add<App>("#app");
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
-            builder.Services.AddScoped<IBraceletService, BraceletService>(); 
+            builder.Services.AddScoped<IBraceletService, BraceletService>();
+            builder.Services.AddScoped<IMessagingService, MessagingService>();
             await builder.Build().RunAsync();
         }
        

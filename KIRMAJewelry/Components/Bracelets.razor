@@ -1,5 +1,9 @@
 ﻿@page "/bracelets"
 @inject IBraceletService client
+@inject IMessagingService _MessagingService
+@inject NavigationManager NavigationManager
+<h2>All bracelets</h2>
+
 
 @if (bracelets == null)
 {
@@ -7,37 +11,6 @@
 }
 else
 {
-    <h2>All bracelets</h2>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Description</th>
-                <th>Material</th>
-                <th>Designer</th>
-                <th>Length</th>
-                <th>Pendant</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var bracelet in bracelets)
-            {
-            <tr>
-                <td>@bracelet.Id</td>
-                <td>@bracelet.Name</td>
-                <td>@bracelet.Price</td>
-                <td>@bracelet.Description</td>
-                <td>@bracelet.Material</td>
-                <td>@bracelet.Designer</td>
-                <td>@bracelet.Length</td>
-                <td>@bracelet.Pendant</td>
-
-            </tr>
-            }
-        </tbody>
-    </table>
     <div>
         <label>
             Bracelet name:
@@ -48,7 +21,15 @@ else
         </button>
 
     </div>
-   
+    <ul class="bracelets">
+        @foreach (var bracelet in bracelets)
+        {
+            <li @onclick="@(() =>OnSelect(bracelet))">
+                <span class="badge">@bracelet.Id</span>@bracelet.Name
+            </li>
+            <button class="delete" title="delete bracelet" @onclick="@(()=> Delete(bracelet))">X</button>
+        }
+    </ul>
 }
 
 <BraceletDetail SelectedBracelet="@selectedBracelet"></BraceletDetail>
@@ -63,9 +44,19 @@ else
         bracelets = await client.GetBracelets();
     }
 
-
+    private async Task OnSelect(Bracelet bracelet)
+    {
+        await _MessagingService.Add($"Bracelet selected {bracelet.Name}");
+        NavigationManager.NavigateTo("/braceletdetail/" + bracelet.Name);
+    }
     private async Task Add()
     {
         bracelets = await client.Add(BraceletName);
+    }
+
+    private async Task Delete(Bracelet bracelet)
+    {
+
+        bracelets = await client.Delete(bracelet);
     }
 }

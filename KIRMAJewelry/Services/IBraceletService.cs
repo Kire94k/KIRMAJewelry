@@ -11,5 +11,7 @@ namespace KIRMAJewelry.Services
         Task<Bracelet[]> GetBracelets();
 
         Task<Bracelet[]> Add(string BraceletName);
+
+        Task<Bracelet[]> Delete(Bracelet bracelet);
     }
 }
