@@ -9,5 +9,7 @@ namespace KIRMAJewelry.Services
     interface IBraceletService
     {
         Task<Bracelet[]> GetBracelets();
+
+        Task<Bracelet[]> Add(string BraceletName);
     }
 }

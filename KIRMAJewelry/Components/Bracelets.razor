@@ -1,0 +1,71 @@
+﻿@page "/bracelets"
+@inject IBraceletService client
+
+@if (bracelets == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <h2>All bracelets</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Material</th>
+                <th>Designer</th>
+                <th>Length</th>
+                <th>Pendant</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var bracelet in bracelets)
+            {
+            <tr>
+                <td>@bracelet.Id</td>
+                <td>@bracelet.Name</td>
+                <td>@bracelet.Price</td>
+                <td>@bracelet.Description</td>
+                <td>@bracelet.Material</td>
+                <td>@bracelet.Designer</td>
+                <td>@bracelet.Length</td>
+                <td>@bracelet.Pendant</td>
+
+            </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        <label>
+            Bracelet name:
+            <input @bind="BraceletName" />
+        </label>
+        <button @onclick="Add">
+            add
+        </button>
+
+    </div>
+   
+}
+
+<BraceletDetail SelectedBracelet="@selectedBracelet"></BraceletDetail>
+
+@code {
+    Bracelet selectedBracelet;
+    private Bracelet[] bracelets;
+    private string BraceletName = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        bracelets = await client.GetBracelets();
+    }
+
+
+    private async Task Add()
+    {
+        bracelets = await client.Add(BraceletName);
+    }
+}
