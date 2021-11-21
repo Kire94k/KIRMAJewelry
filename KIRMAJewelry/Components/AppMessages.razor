@@ -1,0 +1,27 @@
+﻿@inject IMessagingService _MessagingService; 
+
+<h2> Messages</h2>
+>
+@foreach (var message in Messages)
+{
+    <div>@message</div>
+}
+@code {
+    private List<string> Messages;
+
+    protected override void OnInitialized()
+    {
+       
+    }
+
+    private async void MessageChanged(object sender, List<string> NewMessages)
+    {
+        await InvokeAsync(() =>
+        {
+            Messages = NewMessages;
+            StateHasChanged();
+
+        });
+    }
+   
+}

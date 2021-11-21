@@ -1,0 +1,23 @@
+﻿@inject IBraceletService client
+@inject IMessagingService _MessagingService
+@page "/braceletdetail"
+@if (SelectedBracelet != null)
+{
+    <h2>@SelectedBracelet.Name.ToUpper() Details</h2>
+    <div><span>id: </span>SelectedBracelet.Id</div>
+    <div><span>name: </span>SelectedBracelet.Name</div>
+    <div><span>price: </span>SelectedBracelet.Price</div>
+    <div><span>description: </span>SelectedBracelet.Description</div>
+    <div><span>material: </span>SelectedBracelet.Material</div>
+    <div><span>designer: </span>SelectedBracelet.Designer</div>
+    <div><span>length: </span>SelectedBracelet.Length</div>
+    <div><span>pendant: </span>SelectedBracelet.Pendant</div>
+
+}
+
+
+
+@code {
+    [Parameter]
+    public Bracelet SelectedBracelet { get; set; }
+}
