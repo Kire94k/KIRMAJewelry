@@ -1,9 +1,11 @@
-﻿@inject IBraceletService client
-@inject IMessagingService _MessagingService
-@page "/braceletdetail"
+﻿@page "/braceletdetail/{Name}"
+@inject IBraceletService client
+@inject IJSRuntime JSRuntime
+
 @if (SelectedBracelet != null)
 {
-    <h2>@SelectedBracelet.Name.ToUpper() Details</h2>
+    <h2>All bracelets</h2>
+    <h2>@SelectedBracelet.Name Details</h2>
     <div><span>id: </span>SelectedBracelet.Id</div>
     <div><span>name: </span>SelectedBracelet.Name</div>
     <div><span>price: </span>SelectedBracelet.Price</div>
@@ -12,12 +14,26 @@
     <div><span>designer: </span>SelectedBracelet.Designer</div>
     <div><span>length: </span>SelectedBracelet.Length</div>
     <div><span>pendant: </span>SelectedBracelet.Pendant</div>
-
+    <label>
+        name:
+        <input @bind="SelectedBracelet.Name" placeholder="Name" />
+    </label>
 }
 
 
 
 @code {
-    [Parameter]
+    //[Parameter]
     public Bracelet SelectedBracelet { get; set; }
+
+    [Parameter]
+    public string Name { get; set; }
+
+    private Bracelet[] bracelets;
+
+    protected override async Task OnInitializedAsync()
+    {
+        bracelets = await client.GetBracelets();
+        SelectedBracelet = bracelets.First(x => x.Name == Name);
+    }
 }

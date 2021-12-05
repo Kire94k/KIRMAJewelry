@@ -1,7 +1,7 @@
-﻿@inject IMessagingService _MessagingService; 
+﻿@inject IMessagingService _MessagingService
 
 <h2> Messages</h2>
->
+<button class="clear" @onclick="ClearMessages">clear</button>
 @foreach (var message in Messages)
 {
     <div>@message</div>
@@ -11,7 +11,8 @@
 
     protected override void OnInitialized()
     {
-       
+        Messages = _MessagingService.Get();
+        _MessagingService.OnMessagesChanged += MessageChanged;
     }
 
     private async void MessageChanged(object sender, List<string> NewMessages)
@@ -23,5 +24,8 @@
 
         });
     }
-   
+    private async void ClearMessages()
+    {
+        await _MessagingService.Clear();
+    }
 }

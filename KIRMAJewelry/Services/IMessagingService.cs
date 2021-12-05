@@ -5,8 +5,6 @@ using System.Threading.Tasks;
 
 namespace KIRMAJewelry.Services
 {
-    interface IMessagingService
-    {
         public interface IMessagingService
         {
             Task Add(string Message);
@@ -14,5 +12,5 @@ namespace KIRMAJewelry.Services
             List<string> Get();
             event EventHandler<List<string>> OnMessagesChanged;
         }
-    }
+    
 }

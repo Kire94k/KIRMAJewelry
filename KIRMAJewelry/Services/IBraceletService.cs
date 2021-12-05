@@ -6,12 +6,14 @@ using KIRMAJewelry.Models;
 
 namespace KIRMAJewelry.Services
 {
-    interface IBraceletService
+    public interface IBraceletService
     {
         Task<Bracelet[]> GetBracelets();
 
         Task<Bracelet[]> Add(string BraceletName);
 
         Task<Bracelet[]> Delete(Bracelet bracelet);
+
+        Bracelet[] Search(string text);
     }
 }

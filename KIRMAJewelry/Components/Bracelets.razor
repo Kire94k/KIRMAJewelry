@@ -2,7 +2,7 @@
 @inject IBraceletService client
 @inject IMessagingService _MessagingService
 @inject NavigationManager NavigationManager
-<h2>All bracelets</h2>
+
 
 
 @if (bracelets == null)
@@ -11,28 +11,30 @@
 }
 else
 {
+    
     <div>
-        <label>
-            Bracelet name:
+        <label> Bracelet Name:
             <input @bind="BraceletName" />
-        </label>
         <button @onclick="Add">
-            add
+            Add
         </button>
+        </label>
 
     </div>
+    <h2>All bracelets</h2>
     <ul class="bracelets">
         @foreach (var bracelet in bracelets)
         {
             <li @onclick="@(() =>OnSelect(bracelet))">
                 <span class="badge">@bracelet.Id</span>@bracelet.Name
             </li>
-            <button class="delete" title="delete bracelet" @onclick="@(()=> Delete(bracelet))">X</button>
+            
         }
     </ul>
 }
 
 <BraceletDetail SelectedBracelet="@selectedBracelet"></BraceletDetail>
+
 
 @code {
     Bracelet selectedBracelet;
@@ -46,8 +48,9 @@ else
 
     private async Task OnSelect(Bracelet bracelet)
     {
+        selectedBracelet = bracelet;
         await _MessagingService.Add($"Bracelet selected {bracelet.Name}");
-        NavigationManager.NavigateTo("/braceletdetail/" + bracelet.Name);
+        NavigationManager.NavigateTo("/bracelets/" + bracelet.Name);
     }
     private async Task Add()
     {
@@ -60,3 +63,49 @@ else
         bracelets = await client.Delete(bracelet);
     }
 }
+<style>
+    .bracelets{
+        margin:0 0 2em 0;
+        list-style-type: none;
+        padding: 0;
+        width: 15em;
+
+    }
+    .bracelets li{
+        cursor: pointer;
+        position:relative;
+        left: 0;
+        background-color: #EEE;
+        margin: 5em;
+        padding: .3em 0;
+        height: 1.6em;
+        border-radius: 4px;
+    }
+    .bracelets li:hover{
+        color: #607D88;
+        background-color: NDDD;
+        left: .1em;
+    }
+    .bracelets li.selected{
+        background-color: #CFD8DC;
+        color: white;
+    }
+    .bracelets li.selected:hover{
+        background-color: NBBD8DC;
+        color: white;
+    }
+    .bracelets .badge{
+        display:inline-block;
+        font-size: small;
+        color:white;
+        padding: 0.8em 0.7em 0 0.7em;
+        background-color: #405061;
+        line-height: 1em;
+        position: relative;
+        left: -1px;
+        top: -4px;
+        height:1.8em;
+        margin-right: .8em;
+        border-radius: 4px 0 0 4px;
+    }
+</style>

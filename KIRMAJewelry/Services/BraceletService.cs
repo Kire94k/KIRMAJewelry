@@ -12,18 +12,25 @@ namespace KIRMAJewelry.Services
     {
         private readonly HttpClient Http;
 
+        private readonly IMessagingService _MessagingService;
+
         private Bracelet[] bracelets = null;
 
-        public BraceletService(HttpClient client)
+        public BraceletService(HttpClient client, IMessagingService service)
         {
             Http = client;
+            _MessagingService = service;
 
         }
 
         public async Task<Bracelet[]> GetBracelets()
         {
-            bracelets = await Http.GetFromJsonAsync<Bracelet[]>("sample-data/bracelaets.json");
-            return bracelets;
+            if (bracelets == null)
+            {
+                await _MessagingService.Add("Bracelet Service: bracelet fetched");
+                bracelets = await Http.GetFromJsonAsync<Bracelet[]>("sample-data/bracelets.json");
+            }
+                return bracelets; 
         }
         public async Task<Bracelet[]> Add(string BraceletName)
         {
@@ -41,6 +48,12 @@ namespace KIRMAJewelry.Services
             bracelets.Where(x => x != bracelet).ToArray()
             );
             return bracelets;
+        }
+
+        public Bracelet[] Search(string text)
+        {
+            return bracelets.Where(x => x.Name.ToLower()
+            .Contains(text.Trim().ToLower())).ToArray();
         }
 
     }  

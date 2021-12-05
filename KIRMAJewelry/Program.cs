@@ -20,9 +20,9 @@ namespace KIRMAJewelry
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
             builder.Services.AddScoped<IBraceletService, BraceletService>();
-            builder.Services.AddScoped<IMessagingService, MessagingService>();
+            builder.Services.AddSingleton<IMessagingService, MessagingService>();
             await builder.Build().RunAsync();
         }
        
-}
+    }
 }
