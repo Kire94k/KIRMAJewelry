@@ -1,5 +1,52 @@
-﻿<h3>NecklaceDetail</h3>
+﻿@page "/necklacedetail/{Name}"
+@using KIRMAJewelry.Models
+@using KIRMAJewelry.Services
+@inject INecklaceService client
+@inject IJSRuntime JSRuntime
+
+@if (SelectedNecklace != null)
+{
+    <h2>All necklaces</h2>
+    <h2>@SelectedNecklace.Name Details</h2>
+    <div><span>id: </span>@SelectedNecklace.Id</div>
+    <div><span>name: </span>@SelectedNecklace.Name</div>
+    <div><span>price: </span>@SelectedNecklace.Price</div>
+    <div><span>description: </span>@SelectedNecklace.Description</div>
+    <div><span>material: </span>@SelectedNecklace.Material</div>
+    <div><span>designer: </span>@SelectedNecklace.Designer</div>
+    <div><span>length: </span>@SelectedNecklace.Length</div>
+    <div><span>pendant: </span>@SelectedNecklace.Pendant</div>
+    <label>
+        name:
+        <input @bind="@SelectedNecklace.Name" placeholder="Name" />
+    </label>
+}
+
+
 
 @code {
+    [Parameter]
+    public Necklace? SelectedNecklace { get; set; }
 
+    [Parameter]
+    public string? Name { get; set; }
+
+    private Necklace[]? necklaces;
+
+    protected override async Task OnInitializedAsync()
+    {
+        necklaces= await client.GetNecklaces();
+        SelectedNecklace = necklaces.FirstOrDefault(x => x.Name == Name);
+    }
 }
+
+
+<style>
+    .content{
+        margin:auto;
+        width: 50%;
+        margin-top: -1228px;
+
+    }
+   
+</style>

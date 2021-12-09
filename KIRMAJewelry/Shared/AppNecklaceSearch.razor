@@ -1,0 +1,94 @@
+﻿@using KIRMAJewelry.Models
+@inject Services.INecklaceService client;
+@inject NavigationManager NavigationManager
+@inject Services.IMessagingService _MessagingService;
+
+<div id="search-component">
+    <h4><label for="searchBox">Necklace Search</label></h4>
+
+    <input id="search-box" @bind-value="searchBox" @bind-value:event="oninput" />
+
+    <ul class="search-result">
+        @foreach (var necklace in filteredNecklaces)
+        {
+            <li @onclick="@(() => OnSelect(necklace))">
+                <a>
+                    @necklace.Name
+                </a>
+            </li>
+        }
+
+    </ul>
+</div>
+
+@code{
+    string search;
+    string searchBox
+    {
+        get
+        {
+            return search;
+        }
+        set
+        {
+            search = value;
+            filteredNecklaces = Search(value);
+        }
+    }
+    Necklace[] filteredNecklaces = new Necklace[0];
+
+
+    private Necklace[] Search(string text)
+    {
+        return client.Search(searchBox);
+    }
+    private async Task OnSelect(Necklace necklace)
+    {
+        await _MessagingService.Add($"Necklace selected {necklace.Name}");
+        NavigationManager.NavigateTo("/necklacedetail/" + necklace.Name);
+    }
+
+}
+
+<style>
+    /* NecklaceSearch private styles */
+    .search-result li {
+        border-bottom: 1px solid gray;
+        border-left: 1px solid gray;
+        border-right: 1px solid gray;
+        width: 195px;
+        padding: 5px;
+        background-color:aliceblue;
+        cursor: pointer;
+        list-style-type: none;
+    }
+
+        .search-result li:hover {
+            background-color: #607D8B;
+        }
+
+        .search-result li a {
+            color: #888;
+            display: block;
+            text-decoration: none;
+        }
+
+            .search-result li a:hover {
+                color: white;
+            }
+
+            .search-result li a:active {
+                color: white;
+            }
+
+    #search-box {
+        width: 200px;
+        height: 20px;
+    }
+
+    ul.search-result {
+        margin-top: 0;
+        padding-left: 0;
+    }
+</style>
+

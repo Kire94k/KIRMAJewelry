@@ -1,37 +1,36 @@
 [
   {
-    // Bracelet
-    "Id": 1,
-    "Name": "RECONNECT armring sølvbelagt",
+    "Id": "1",
+    "Name": "RECONNECT armring slvbelagt",
     "Price": 249,
     "Description": "sodj",
-    "Material": "Sølvbelagt",
+    "Material": "Slvbelagt",
     "Designer": "Reconnect",
     "Length": 100,
-    "Pendant": "False"
+    "Pendant": false
 
   },
 
   {
-    "Id": 2,
+    "Id": "2",
     "Name": "PARAMUT armring guldbelagt",
     "Price": 449,
     "Description": "sodj",
     "Material": "Guldbelagt",
     "Designer": "Paramut",
     "Length": 74,
-    "Pendant": "True"
+    "Pendant": true
   },
 
   {
-    "Id": 3,
+    "Id": "3",
     "Name": "VERA guldbelagt",
     "Price": 349,
     "Description": "sodj",
     "Material": "Guldbelagt",
     "Designer": "Vera",
     "Length": 185,
-    "Pendant": "False"
+    "Pendant": false
   }
 ]
   

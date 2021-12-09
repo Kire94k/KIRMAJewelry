@@ -1,5 +1,120 @@
-﻿<h3>Necklaces</h3>
+﻿@page "/necklaces"
+@using KIRMAJewelry.Models
+@using KIRMAJewelry.Services
+@inject INecklaceService client
+@inject IMessagingService _MessagingService
+@inject NavigationManager NavigationManager
+
+
+@if (necklaces == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    
+    <div>
+        <label> Necklace Name:
+            <input @bind="NecklaceName" />
+        <button @onclick="Add">
+            Add
+        </button>
+        </label>
+
+    </div>
+    <h2>All necklaces</h2>
+    <ul class="necklaces">
+        @foreach (var necklace in necklaces)
+        {
+            <li @onclick="@(() =>OnSelect(necklace))">
+                <span class="badge">@necklace.Id</span>
+                <span>
+                    @necklace.Name
+                 </span>  
+            </li>
+            
+        }
+    </ul>
+}
+
+<NecklaceDetail SelectedNecklace="@selectedNecklace"></NecklaceDetail>
+
 
 @code {
+    Necklace? selectedNecklace;
+    private Necklace[]? necklaces;
+    private string NecklaceName = "";
 
+    protected override async Task OnInitializedAsync()
+    {
+        necklaces = await client.GetNecklaces();
+    }
+
+    private async Task OnSelect(Necklace necklace)
+    {
+        selectedNecklace = necklace;
+        await _MessagingService.Add($"Necklace selected {necklace.Name}");
+        NavigationManager.NavigateTo("/necklaces/" + necklace.Name);
+    }
+    private async Task Add()
+    {
+        necklaces = await client.Add(NecklaceName);
+    }
+
+    private async Task Delete(Necklace necklace)
+    {
+
+        necklaces = await client.Delete(necklace);
+    }
 }
+<style>
+    .necklaces{
+        margin:0 0 2em 0;
+        list-style-type: none;
+        padding: 0;
+        width: 15em;
+
+    }
+    .necklaces li{
+        cursor: pointer;
+        position:relative;
+        left: -80px;
+        background-color: #EEE;
+        margin: 5em;
+        padding: .3em 0;
+        height: 1.6em;
+        border-radius: 4px;
+    }
+    .necklaces li:hover{
+        color: #607D88;
+        background-color: NDDD;
+    }
+    .necklaces li.selected{
+        background-color: #CFD8DC;
+        color: white;
+    }
+    .necklaces li.selected:hover{
+        background-color: NBBD8DC;
+        color: white;
+    }
+    .necklaces .badge{
+        display:inline-block;
+        font-size: small;
+        color:white;
+        padding: 0.8em 0.7em 0 0.7em;
+        background-color: #405061;
+        line-height: 1em;
+        position: relative;
+        left: -1px;
+        top: -4px;
+        height:1.8em;
+        margin-right: .8em;
+        border-radius: 4px 0 0 4px;
+    }
+
+    .content{
+        margin:auto;
+        width: 50%;
+        margin-top: -1228px;
+    }
+</style>

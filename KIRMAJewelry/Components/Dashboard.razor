@@ -2,6 +2,8 @@
 @inject IMessagingService _MessagingService
 @inject NavigationManager NavigationManager
 @page "/dashboard"
+@using KIRMAJewelry.Models
+@using KIRMAJewelry.Services
 <h3>Dashboard</h3>
 
 @if (bracelets != null)
@@ -100,4 +102,10 @@
         .grid-pad > [class*='col-']:last-of-type {
             padding-right: 20px;
         }
+
+    .content{
+        margin:auto;
+        width: 50%;
+        margin-top: -1228px;
+    }
 </style>

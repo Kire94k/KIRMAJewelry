@@ -1,4 +1,6 @@
 ﻿@page "/braceletdetail/{Name}"
+@using KIRMAJewelry.Models
+@using KIRMAJewelry.Services
 @inject IBraceletService client
 @inject IJSRuntime JSRuntime
 
@@ -6,34 +8,45 @@
 {
     <h2>All bracelets</h2>
     <h2>@SelectedBracelet.Name Details</h2>
-    <div><span>id: </span>SelectedBracelet.Id</div>
-    <div><span>name: </span>SelectedBracelet.Name</div>
-    <div><span>price: </span>SelectedBracelet.Price</div>
-    <div><span>description: </span>SelectedBracelet.Description</div>
-    <div><span>material: </span>SelectedBracelet.Material</div>
-    <div><span>designer: </span>SelectedBracelet.Designer</div>
-    <div><span>length: </span>SelectedBracelet.Length</div>
-    <div><span>pendant: </span>SelectedBracelet.Pendant</div>
+    <div><span>id: </span>@SelectedBracelet.Id</div>
+    <div><span>name: </span>@SelectedBracelet.Name</div>
+    <div><span>price: </span>@SelectedBracelet.Price</div>
+    <div><span>description: </span>@SelectedBracelet.Description</div>
+    <div><span>material: </span>@SelectedBracelet.Material</div>
+    <div><span>designer: </span>@SelectedBracelet.Designer</div>
+    <div><span>length: </span>@SelectedBracelet.Length</div>
+    <div><span>pendant: </span>@SelectedBracelet.Pendant</div>
     <label>
         name:
-        <input @bind="SelectedBracelet.Name" placeholder="Name" />
+        <input @bind="@SelectedBracelet.Name" placeholder="Name" />
     </label>
 }
 
 
 
 @code {
-    //[Parameter]
-    public Bracelet SelectedBracelet { get; set; }
+    [Parameter]
+    public Bracelet? SelectedBracelet { get; set; }
 
     [Parameter]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
-    private Bracelet[] bracelets;
+    private Bracelet[]? bracelets;
 
     protected override async Task OnInitializedAsync()
     {
         bracelets = await client.GetBracelets();
-        SelectedBracelet = bracelets.First(x => x.Name == Name);
+        SelectedBracelet = bracelets.FirstOrDefault(x => x.Name == Name);
     }
 }
+
+
+<style>
+    .content{
+        margin:auto;
+        width: 50%;
+        margin-top: -1228px;
+
+    }
+   
+</style>

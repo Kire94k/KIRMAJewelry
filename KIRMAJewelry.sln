@@ -1,9 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30907.101
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KIRMAJewelry", "KIRMAJewelry\KIRMAJewelry.csproj", "{08B995BC-7A80-42FA-8706-6172EB4BF75E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KIRMAJewelry", "KIRMAJewelry\KIRMAJewelry.csproj", "{90105A5D-D9DC-4307-B936-4AB04D83A3BB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BraceletService", "BraceletService\BraceletService.csproj", "{59E60261-F1FB-44B3-8DF0-A7BB2C724537}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NecklaceService", "NecklaceService\NecklaceService.csproj", "{4455BDBA-50FF-4FB5-A4F2-BAFD3DFC6A7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RingService", "RingService\RingService.csproj", "{276047F5-C13B-4533-BDC6-1B27D8E52529}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EarringService", "EarringService\EarringService.csproj", "{86704481-4933-4F4F-9C97-2844494758C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +19,31 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{08B995BC-7A80-42FA-8706-6172EB4BF75E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{08B995BC-7A80-42FA-8706-6172EB4BF75E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{08B995BC-7A80-42FA-8706-6172EB4BF75E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{08B995BC-7A80-42FA-8706-6172EB4BF75E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90105A5D-D9DC-4307-B936-4AB04D83A3BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90105A5D-D9DC-4307-B936-4AB04D83A3BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90105A5D-D9DC-4307-B936-4AB04D83A3BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90105A5D-D9DC-4307-B936-4AB04D83A3BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59E60261-F1FB-44B3-8DF0-A7BB2C724537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59E60261-F1FB-44B3-8DF0-A7BB2C724537}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59E60261-F1FB-44B3-8DF0-A7BB2C724537}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59E60261-F1FB-44B3-8DF0-A7BB2C724537}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4455BDBA-50FF-4FB5-A4F2-BAFD3DFC6A7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4455BDBA-50FF-4FB5-A4F2-BAFD3DFC6A7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4455BDBA-50FF-4FB5-A4F2-BAFD3DFC6A7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4455BDBA-50FF-4FB5-A4F2-BAFD3DFC6A7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{276047F5-C13B-4533-BDC6-1B27D8E52529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{276047F5-C13B-4533-BDC6-1B27D8E52529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{276047F5-C13B-4533-BDC6-1B27D8E52529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{276047F5-C13B-4533-BDC6-1B27D8E52529}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86704481-4933-4F4F-9C97-2844494758C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86704481-4933-4F4F-9C97-2844494758C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86704481-4933-4F4F-9C97-2844494758C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86704481-4933-4F4F-9C97-2844494758C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {14BD6692-9A22-4FCB-B018-193ED8F7CB36}
+		SolutionGuid = {C27FC5D1-A460-4153-8C7C-F897C84045C4}
 	EndGlobalSection
 EndGlobal

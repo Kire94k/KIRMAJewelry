@@ -1,4 +1,6 @@
 ﻿@page "/bracelets"
+@using KIRMAJewelry.Models
+@using KIRMAJewelry.Services
 @inject IBraceletService client
 @inject IMessagingService _MessagingService
 @inject NavigationManager NavigationManager
@@ -21,12 +23,15 @@ else
         </label>
 
     </div>
-    <h2>All bracelets</h2>
+    
     <ul class="bracelets">
         @foreach (var bracelet in bracelets)
         {
             <li @onclick="@(() =>OnSelect(bracelet))">
-                <span class="badge">@bracelet.Id</span>@bracelet.Name
+                <span class="badge">@bracelet.Id</span>
+                <span>
+                    @bracelet.Name
+                 </span>  
             </li>
             
         }
@@ -37,8 +42,8 @@ else
 
 
 @code {
-    Bracelet selectedBracelet;
-    private Bracelet[] bracelets;
+    Bracelet? selectedBracelet;
+    private Bracelet[]? bracelets;
     private string BraceletName = "";
 
     protected override async Task OnInitializedAsync()
@@ -74,7 +79,7 @@ else
     .bracelets li{
         cursor: pointer;
         position:relative;
-        left: 0;
+        left: -80px;
         background-color: #EEE;
         margin: 5em;
         padding: .3em 0;
@@ -83,15 +88,14 @@ else
     }
     .bracelets li:hover{
         color: #607D88;
-        background-color: NDDD;
-        left: .1em;
+        background-color: khaki;
     }
     .bracelets li.selected{
         background-color: #CFD8DC;
         color: white;
     }
     .bracelets li.selected:hover{
-        background-color: NBBD8DC;
+        background-color: blue;
         color: white;
     }
     .bracelets .badge{
@@ -107,5 +111,11 @@ else
         height:1.8em;
         margin-right: .8em;
         border-radius: 4px 0 0 4px;
+    }
+
+    .content{
+        margin:auto;
+        width: 50%;
+        margin-top: -1228px;
     }
 </style>

@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "DZC4zrrD6UuE2uZ3Zsq3nxRMtHlvKm9Wkg4lLGdiicfYmi0EnCjniF9yFPv6IKu9Hyc5dFfLziB9wphxAySzvw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Anders\\Documents\\Kirma\\KIRMAJewelry\\RingService\\RingService.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Anders\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Anders\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Anders\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\Anders\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\Anders\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\Anders\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
